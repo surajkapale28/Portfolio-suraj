@@ -5,15 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Suraj Kapale | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .hero-bg-img {
-      background-image: url('images/hero-bg.jpg');
-      background-size: cover;
-      background-position: center;
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .futuristic-bg {
+      background: linear-gradient(to right, #1e3a8a, #312e81);
+      position: relative;
+    }
+    .futuristic-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.03) 0,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 20px
+      );
+      animation: pulse 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.3; }
     }
   </style>
   <script>
@@ -21,15 +38,12 @@
     function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
     }
-    document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({ once: true, duration: 800 });
-    });
   </script>
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition duration-500">
 
-  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50" data-aos="fade-down">
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto p-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Suraj Kapale</h1>
       <nav class="space-x-4 text-sm font-medium">
@@ -43,69 +57,63 @@
     </div>
   </header>
 
-  <section class="text-center py-20 text-white hero-bg-img" data-aos="zoom-in">
-    <div class="bg-black bg-opacity-60 py-12 px-4">
+  <!-- Hero Section -->
+  <section class="futuristic-bg text-white text-center py-24 overflow-hidden">
+    <div class="relative z-10 px-6">
       <h2 class="text-4xl font-bold mb-4 animate-bounce">Hey, I'm Suraj 👋</h2>
-      <p class="text-xl max-w-xl mx-auto">M.Tech Data Science | Power BI | Python | ML | SQL | Real-Time Dashboard Projects</p>
-      <a href="https://drive.google.com/uc?export=download&id=1siLjURZGSuBSPRcnU3IURjIfonQN8srh" target="_blank" class="inline-block mt-6 px-6 py-2 bg-white text-blue-600 font-semibold rounded shadow hover:bg-gray-200">📄 Download Resume</a>
+      <p class="text-xl max-w-xl mx-auto">M.Tech Data Science | Power BI | Python | SQL | Machine Learning | Real-Time Dashboard Projects</p>
     </div>
   </section>
 
-  <section id="about" class="py-16 max-w-4xl mx-auto px-4" data-aos="fade-up">
+  <section id="about" class="py-16 max-w-4xl mx-auto px-4">
     <h3 class="text-2xl font-bold text-blue-600 mb-4">About Me</h3>
     <p class="text-lg leading-relaxed">
-      I’m currently pursuing M.Tech in Data Science from COEP. I hold a B.Tech in Data Science from GH Raisoni College with a CGPA of 7.94. I'm passionate about turning raw data into actionable insights using Power BI, Python, and ML.
+      I'm pursuing M.Tech in Data Science at COEP. I completed B.Tech in Data Science from GH Raisoni College of Engineering & Management with a CGPA of 7.94. I have hands-on experience in data analysis, machine learning, Power BI, and deep learning.
     </p>
   </section>
 
-  <section id="skills" class="py-16 bg-white max-w-4xl mx-auto px-4" data-aos="fade-up">
+  <section id="skills" class="py-16 bg-white max-w-4xl mx-auto px-4">
     <h3 class="text-2xl font-bold text-blue-600 mb-4">Skills</h3>
     <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
       <li class="bg-gray-100 p-4 rounded shadow">Python</li>
       <li class="bg-gray-100 p-4 rounded shadow">SQL</li>
       <li class="bg-gray-100 p-4 rounded shadow">Power BI</li>
       <li class="bg-gray-100 p-4 rounded shadow">Machine Learning</li>
-      <li class="bg-gray-100 p-4 rounded shadow">Tableau</li>
+      <li class="bg-gray-100 p-4 rounded shadow">Data Visualization</li>
       <li class="bg-gray-100 p-4 rounded shadow">ETL</li>
-      <li class="bg-gray-100 p-4 rounded shadow">DAX</li>
-      <li class="bg-gray-100 p-4 rounded shadow">Power Query</li>
     </ul>
   </section>
 
-  <section id="projects" class="py-16 max-w-4xl mx-auto px-4" data-aos="fade-up">
+  <section id="projects" class="py-16 max-w-4xl mx-auto px-4">
     <h3 class="text-2xl font-bold text-blue-600 mb-4">Projects</h3>
     <div class="space-y-6">
-      <div class="p-4 bg-white rounded shadow" data-aos="fade-right">
-        <img src="images/portfolio-1.jpg" class="w-full h-48 object-cover rounded mb-4" alt="Retail Dashboard"/>
-        <h4 class="text-xl font-semibold">Retail Sales Dashboard</h4>
-        <p>Built using Power BI + Google Sheets API. KPI-based real-time tracking of sales and inventory.</p>
+      <div class="p-4 bg-white rounded shadow">
+        <h4 class="text-xl font-semibold">📊 Real-Time Retail Sales Performance Dashboard</h4>
+        <p>Built using Power BI and Google Sheets API to track sales, profit, and inventory across stores with dynamic filtering, KPIs, and automated refresh.</p>
       </div>
-      <div class="p-4 bg-white rounded shadow" data-aos="fade-left">
-        <img src="images/portfolio-2.jpg" class="w-full h-48 object-cover rounded mb-4" alt="Crypto Dashboard"/>
-        <h4 class="text-xl font-semibold">Cryptocurrency Price Tracker</h4>
-        <p>Power BI dashboard using CoinGecko API. Displays real-time pricing, market cap, and volume.</p>
+      <div class="p-4 bg-white rounded shadow">
+        <h4 class="text-xl font-semibold">💰 Cryptocurrency Price Tracker Dashboard</h4>
+        <p>Created with Power BI and CoinGecko API. Shows real-time price, market cap, and volume for top cryptocurrencies using Power Query and DAX.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="certifications" class="py-16 bg-white max-w-4xl mx-auto px-4" data-aos="fade-up">
-    <h3 class="text-2xl font-bold text-blue-600 mb-8">Certifications</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-4 bg-gray-50 rounded shadow" data-aos="flip-left">
-        <img src="images/cert1.png" alt="Cert 1" class="h-28 mx-auto mb-2"/>
-        <h4 class="text-lg font-semibold text-center">Power BI Specialist</h4>
+      <div class="p-4 bg-white rounded shadow">
+        <h4 class="text-xl font-semibold">🩺 Diabetes Detection System</h4>
+        <p>ML-based system for early diabetes detection using patient data. Models include Logistic Regression, KNN, and Random Forest with EDA in Python.</p>
       </div>
-      <div class="p-4 bg-gray-50 rounded shadow" data-aos="flip-left">
-        <img src="images/cert2.png" alt="Cert 2" class="h-28 mx-auto mb-2"/>
-        <h4 class="text-lg font-semibold text-center">ML Expert</h4>
+      <div class="p-4 bg-white rounded shadow">
+        <h4 class="text-xl font-semibold">🧠 Smart Job Advisor</h4>
+        <p>AI tool that analyzes resumes and gives job/course recommendations. Built with Python, NLP, and scikit-learn. Resume parser + interactive UI.</p>
+      </div>
+      <div class="p-4 bg-white rounded shadow">
+        <h4 class="text-xl font-semibold">🌾 Crop Disease Detection</h4>
+        <p>Deep learning solution using CNN (Keras/TensorFlow) to identify plant diseases from leaf images. Supports sustainable farming with early detection.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="py-16 max-w-4xl mx-auto px-4" data-aos="fade-up">
+  <section id="contact" class="py-16 bg-white max-w-4xl mx-auto px-4">
     <h3 class="text-2xl font-bold text-blue-600 mb-4">Contact Me</h3>
-    <p class="mb-4">Let’s connect! Reach out at:</p>
-    <ul class="text-lg">
+    <p class="mb-4">Let’s connect! Reach me at:</p>
+    <ul>
       <li>Email: <a href="mailto:surajkapale28@gmail.com" class="text-blue-600">surajkapale28@gmail.com</a></li>
       <li>Phone: +91 9373398569</li>
       <li>GitHub: <a href="https://github.com/surajkapale28" class="text-blue-600">github.com/surajkapale28</a></li>
@@ -113,8 +121,9 @@
     </ul>
   </section>
 
-  <footer class="bg-gray-200 dark:bg-gray-900 py-4 text-center text-sm text-gray-600 dark:text-gray-400" data-aos="fade-up">
+  <footer class="bg-gray-200 dark:bg-gray-900 py-4 text-center text-sm text-gray-600 dark:text-gray-400">
     © 2025 Suraj Kapale. All rights reserved.
   </footer>
+
 </body>
 </html>
