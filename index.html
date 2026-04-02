@@ -37,7 +37,7 @@
       z-index: -1;
     }
 
-    /* CARD */
+    /* CARD STYLE */
     .card {
       background: rgba(30, 41, 59, 0.6);
       backdrop-filter: blur(10px);
@@ -51,7 +51,6 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
-    /* GLOW BORDER */
     .card::before {
       content: "";
       position: absolute;
@@ -112,10 +111,8 @@
 <!-- HERO -->
 <section class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
-  <!-- PHOTO -->
   <img src="profile.jpg" class="w-52 h-52 rounded-full border-4 border-blue-500">
 
-  <!-- TEXT -->
   <div>
     <h2 class="text-4xl font-bold gradient-text mb-4">
       Data Scientist & ML Engineer
@@ -137,6 +134,15 @@
 
 </section>
 
+<!-- MISSION -->
+<section class="max-w-5xl mx-auto py-12 px-6 text-center">
+  <h3 class="text-2xl font-bold gradient-text mb-4">My Mission</h3>
+  <p class="text-gray-400 max-w-3xl mx-auto">
+    My goal is to build intelligent AI systems that solve real-world problems,
+    especially in agriculture, healthcare, and finance by combining ML, NLP, and CV.
+  </p>
+</section>
+
 <!-- ABOUT -->
 <section id="about" class="max-w-5xl mx-auto py-16 px-6">
   <h3 class="text-2xl font-bold mb-6 gradient-text">About Me</h3>
@@ -144,8 +150,7 @@
   <div class="card p-6">
     <p class="text-gray-400">
       I specialize in Machine Learning, NLP, and Computer Vision. I have built
-      end-to-end AI systems including AgriFusion, integrating YOLO, LLMs,
-      and Knowledge Graphs for smart agriculture solutions.
+      end-to-end AI systems like AgriFusion integrating YOLO, LLMs, and Knowledge Graphs.
     </p>
   </div>
 </section>
@@ -157,18 +162,18 @@
   <div class="grid md:grid-cols-2 gap-8">
 
     <div class="card p-6">
-      <h4 class="text-xl font-semibold mb-2">AgriFusion (Flagship)</h4>
+      <h4 class="text-xl font-semibold mb-2">AgriFusion (Research Project)</h4>
       <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>YOLO-based plant disease detection</li>
-        <li>LLaMA fine-tuned model</li>
+        <li>YOLO plant disease detection</li>
+        <li>LLaMA fine-tuned QA model</li>
         <li>Knowledge Graph integration</li>
-        <li>Evaluation using mAP & BERTScore</li>
+        <li>Evaluated with mAP & BERTScore</li>
       </ul>
     </div>
 
     <div class="card p-6">
       <h4 class="text-xl font-semibold">Smart Job Advisor</h4>
-      <p class="text-gray-400">Resume analyzer using NLP</p>
+      <p class="text-gray-400">NLP-based resume analyzer</p>
     </div>
 
     <div class="card p-6">
@@ -178,9 +183,21 @@
 
     <div class="card p-6">
       <h4 class="text-xl font-semibold">Sales Dashboard</h4>
-      <p class="text-gray-400">Power BI dashboard</p>
+      <p class="text-gray-400">Power BI analytics</p>
     </div>
 
+  </div>
+</section>
+
+<!-- CONFERENCE -->
+<section class="max-w-5xl mx-auto py-16 px-6">
+  <h3 class="text-2xl font-bold gradient-text mb-6 text-center">Research & Conference</h3>
+
+  <div class="card p-6">
+    <h4 class="text-xl font-semibold mb-2">ICICST 2026 – NIT Jalandhar</h4>
+    <p class="text-gray-400">
+      Presented research on AI-based plant disease detection and advisory systems.
+    </p>
   </div>
 </section>
 
@@ -191,7 +208,7 @@
   <p class="text-gray-400">📱 +91 9373398569</p>
 </section>
 
-<!-- WHATSAPP BUTTON -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/919373398569" target="_blank" class="whatsapp-btn">
   💬 Chat on WhatsApp
 </a>
