@@ -14,7 +14,6 @@
       color: #e2e8f0;
     }
 
-    /* GRID BACKGROUND */
     body::before {
       content: "";
       position: fixed;
@@ -26,7 +25,6 @@
       z-index: -2;
     }
 
-    /* GLOW LIGHT */
     body::after {
       content: "";
       position: fixed;
@@ -37,13 +35,13 @@
       z-index: -1;
     }
 
-    /* CARD STYLE */
     .card {
       background: rgba(30, 41, 59, 0.6);
       backdrop-filter: blur(10px);
       border-radius: 14px;
       transition: 0.4s;
       position: relative;
+      padding: 20px;
     }
 
     .card:hover {
@@ -76,7 +74,6 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* WHATSAPP BUTTON */
     .whatsapp-btn {
       position: fixed;
       bottom: 20px;
@@ -87,18 +84,12 @@
       border-radius: 50px;
       font-size: 14px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      transition: 0.3s;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
     }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="flex justify-between items-center px-8 py-4 border-b border-gray-700">
   <h1 class="text-xl font-bold gradient-text">Suraj Kapale</h1>
   <nav class="space-x-6 text-sm">
@@ -108,7 +99,6 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
   <img src="profile.jpg" class="w-52 h-52 rounded-full border-4 border-blue-500">
@@ -119,8 +109,8 @@
     </h2>
 
     <p class="text-gray-400 mb-4">
-      M.Tech Data Science student at COEP. I build AI systems using Machine Learning,
-      NLP, and Computer Vision to solve real-world problems.
+      M.Tech Data Science student at COEP specializing in Machine Learning,
+      NLP, and Computer Vision. I develop intelligent AI systems for real-world impact.
     </p>
 
     <div class="flex gap-4">
@@ -138,8 +128,8 @@
 <section class="max-w-5xl mx-auto py-12 px-6 text-center">
   <h3 class="text-2xl font-bold gradient-text mb-4">My Mission</h3>
   <p class="text-gray-400 max-w-3xl mx-auto">
-    My goal is to build intelligent AI systems that solve real-world problems,
-    especially in agriculture, healthcare, and finance by combining ML, NLP, and CV.
+    To build scalable AI systems that bridge research and real-world applications,
+    especially in agriculture, healthcare, and finance using ML, NLP, and CV.
   </p>
 </section>
 
@@ -147,10 +137,12 @@
 <section id="about" class="max-w-5xl mx-auto py-16 px-6">
   <h3 class="text-2xl font-bold mb-6 gradient-text">About Me</h3>
 
-  <div class="card p-6">
+  <div class="card">
     <p class="text-gray-400">
-      I specialize in Machine Learning, NLP, and Computer Vision. I have built
-      end-to-end AI systems like AgriFusion integrating YOLO, LLMs, and Knowledge Graphs.
+      I have hands-on experience in building end-to-end machine learning pipelines,
+      working with structured and unstructured data, and developing models for real-world use cases.
+      My key work includes AgriFusion, an intelligent agriculture system integrating YOLO, LLMs,
+      and Knowledge Graphs for smart advisory.
     </p>
   </div>
 </section>
@@ -161,29 +153,61 @@
 
   <div class="grid md:grid-cols-2 gap-8">
 
-    <div class="card p-6">
+    <div class="card">
       <h4 class="text-xl font-semibold mb-2">AgriFusion (Research Project)</h4>
+      <p class="text-gray-400 mb-3">
+        Developed a full AI pipeline combining Computer Vision and LLMs to assist farmers.
+      </p>
       <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>YOLO plant disease detection</li>
-        <li>LLaMA fine-tuned QA model</li>
-        <li>Knowledge Graph integration</li>
-        <li>Evaluated with mAP & BERTScore</li>
+        <li>YOLO-based plant disease detection (high mAP)</li>
+        <li>LLaMA fine-tuned for agriculture QA</li>
+        <li>Knowledge Graph for contextual insights</li>
+        <li>Evaluation using BERTScore & system accuracy</li>
+        <li>End-to-end system integration</li>
       </ul>
+      <p class="text-xs mt-3 text-blue-400">Tech: YOLO, LLaMA, NLP, HuggingFace</p>
     </div>
 
-    <div class="card p-6">
-      <h4 class="text-xl font-semibold">Smart Job Advisor</h4>
-      <p class="text-gray-400">NLP-based resume analyzer</p>
+    <div class="card">
+      <h4 class="text-xl font-semibold mb-2">Smart Job Advisor</h4>
+      <p class="text-gray-400 mb-3">
+        AI system to analyze resumes and recommend jobs and skills.
+      </p>
+      <ul class="text-sm text-gray-400 list-disc list-inside">
+        <li>NLP-based resume parsing</li>
+        <li>Similarity-based job recommendations</li>
+        <li>Skill gap analysis</li>
+        <li>Streamlit deployment</li>
+      </ul>
+      <p class="text-xs mt-3 text-blue-400">Tech: NLP, Python, Streamlit</p>
     </div>
 
-    <div class="card p-6">
-      <h4 class="text-xl font-semibold">Crop Disease Detection</h4>
-      <p class="text-gray-400">CNN-based classifier</p>
+    <div class="card">
+      <h4 class="text-xl font-semibold mb-2">Crop Disease Detection</h4>
+      <p class="text-gray-400 mb-3">
+        Deep learning model to detect plant diseases from images.
+      </p>
+      <ul class="text-sm text-gray-400 list-disc list-inside">
+        <li>CNN-based classification model</li>
+        <li>Data preprocessing & augmentation</li>
+        <li>High accuracy achieved</li>
+        <li>Supports farmers in early diagnosis</li>
+      </ul>
+      <p class="text-xs mt-3 text-blue-400">Tech: CNN, TensorFlow</p>
     </div>
 
-    <div class="card p-6">
-      <h4 class="text-xl font-semibold">Sales Dashboard</h4>
-      <p class="text-gray-400">Power BI analytics</p>
+    <div class="card">
+      <h4 class="text-xl font-semibold mb-2">Sales Performance Dashboard</h4>
+      <p class="text-gray-400 mb-3">
+        Business intelligence dashboard for analytics.
+      </p>
+      <ul class="text-sm text-gray-400 list-disc list-inside">
+        <li>Power BI dashboards with KPI tracking</li>
+        <li>Real-time data integration</li>
+        <li>DAX-based calculations</li>
+        <li>Insight generation for decision making</li>
+      </ul>
+      <p class="text-xs mt-3 text-blue-400">Tech: Power BI, DAX, SQL</p>
     </div>
 
   </div>
@@ -193,10 +217,11 @@
 <section class="max-w-5xl mx-auto py-16 px-6">
   <h3 class="text-2xl font-bold gradient-text mb-6 text-center">Research & Conference</h3>
 
-  <div class="card p-6">
+  <div class="card">
     <h4 class="text-xl font-semibold mb-2">ICICST 2026 – NIT Jalandhar</h4>
     <p class="text-gray-400">
-      Presented research on AI-based plant disease detection and advisory systems.
+      Presented research on AI-based plant disease detection and intelligent advisory systems,
+      focusing on real-world deployment and impact.
     </p>
   </div>
 </section>
@@ -208,7 +233,6 @@
   <p class="text-gray-400">📱 +91 9373398569</p>
 </section>
 
-<!-- WHATSAPP -->
 <a href="https://wa.me/919373398569" target="_blank" class="whatsapp-btn">
   💬 Chat on WhatsApp
 </a>
