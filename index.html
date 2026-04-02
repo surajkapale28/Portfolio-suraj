@@ -1,257 +1,168 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suraj Kapale | Data Scientist</title>
-
+  <title>Suraj Kapale | Data Scientist & ML Engineer</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(59,130,246,0.15), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(168,85,247,0.15), transparent 40%);
-      z-index: -1;
-    }
-
-    /* PROFILE */
-    .profile-container {
-      position: relative;
-      width: 220px;
-      height: 220px;
-    }
-
-    .profile-container::before {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      background: linear-gradient(120deg,#3b82f6,#9333ea,#06b6d4);
-      filter: blur(12px);
-      opacity: 0.8;
-    }
-
-    .profile-img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      position: relative;
-      border: 4px solid #0f172a;
-      transition: 0.4s;
-    }
-
-    .profile-container:hover .profile-img {
-      transform: scale(1.05);
-    }
-
-    /* CARD */
-    .card {
-      background: rgba(30, 41, 59, 0.6);
-      backdrop-filter: blur(10px);
-      border-radius: 14px;
-      padding: 20px;
-      transition: 0.4s;
-      position: relative;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 14px;
-      padding: 1px;
-      background: linear-gradient(120deg,#3b82f6,#9333ea,#06b6d4);
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      opacity: 0;
-      transition: 0.4s;
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .gradient-text {
-      background: linear-gradient(to right, #38bdf8, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 50px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      font-size: 14px;
-    }
+    body { font-family: 'Poppins', sans-serif; background: #0f172a; color: #e2e8f0; }
+    .bg-glow { position: fixed; inset: 0; background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 40%); z-index: -1; }
+    .card { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-5px); border-color: rgba(59, 130, 246, 0.3); }
+    .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .skill-badge { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 2px 10px; border-radius: 999px; font-size: 0.7rem; }
   </style>
 </head>
-
 <body>
 
-<header class="flex justify-between items-center px-8 py-4 border-b border-gray-700">
-  <h1 class="text-xl font-bold gradient-text">Suraj Kapale</h1>
-</header>
+<div class="bg-glow"></div>
 
-<!-- HERO -->
-<section class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
-
-  <div class="profile-container">
-    <img src="profile.jpg" class="profile-img">
+<nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold gradient-text">Suraj Kapale</h1>
+    <div class="hidden md:flex space-x-6 text-sm">
+      <a href="#about" class="hover:text-blue-400 transition">About</a>
+      <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+      <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+      <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+    </div>
   </div>
+</nav>
 
-  <div class="max-w-xl text-center md:text-left">
-    <h2 class="text-4xl font-bold gradient-text mb-4">
-      Data Scientist & ML Engineer
-    </h2>
-
-    <p class="text-gray-400 mb-4">
-      M.Tech Data Science student at COEP specializing in Machine Learning,
-      NLP, and Computer Vision. I build intelligent AI systems for real-world impact.
+<section class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+  <div class="w-48 h-48 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 p-1">
+    <img src="profile.jpg" class="w-full h-full rounded-full object-cover border-4 border-slate-900" alt="Suraj Kapale">
+  </div>
+  <div class="max-w-2xl text-center md:text-left">
+    <h2 class="text-4xl font-bold mb-4">Hi, I'm <span class="gradient-text">Suraj Kapale</span></h2>
+    <p class="text-gray-400 leading-relaxed mb-6">
+      Data-driven professional and **M.Tech Data Science candidate at COEP**[cite: 8]. I specialize in building scalable ETL pipelines, automated data validation, and AI-integrated systems[cite: 8].
     </p>
-
     <div class="flex gap-4 justify-center md:justify-start">
-      <a href="resume.pdf" target="_blank"
-         class="bg-blue-500 px-4 py-2 rounded text-white">View Resume</a>
-
-      <a href="https://github.com/surajkapale28" target="_blank"
-         class="border border-blue-500 px-4 py-2 rounded">GitHub</a>
+      <a href="mailto:surajkapale28@gmail.com" class="bg-blue-600 px-6 py-2 rounded-lg text-sm font-semibold">Contact Me</a>
+      <a href="https://github.com/surajkapale28" class="border border-slate-700 px-6 py-2 rounded-lg text-sm font-semibold">GitHub</a>
     </div>
   </div>
-
 </section>
 
-<!-- MISSION -->
-<section class="max-w-5xl mx-auto py-12 px-6 text-center">
-  <h3 class="text-2xl font-bold gradient-text mb-4">My Mission</h3>
-  <p class="text-gray-400 max-w-3xl mx-auto">
-    To build scalable AI systems that bridge research and real-world applications,
-    especially in agriculture, healthcare, and finance using ML, NLP, and CV.
-  </p>
-</section>
-
-<!-- ABOUT -->
-<section class="max-w-5xl mx-auto py-16 px-6">
-  <h3 class="text-2xl font-bold mb-6 gradient-text">About Me</h3>
-
-  <div class="card">
-    <p class="text-gray-400">
-      I have experience building end-to-end machine learning pipelines, working with
-      structured and unstructured data, and deploying AI solutions. My key project
-      AgriFusion integrates YOLO, LLMs, and Knowledge Graphs for smart agriculture.
-    </p>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="max-w-6xl mx-auto py-16 px-6">
-  <h3 class="text-3xl font-bold text-center mb-10 gradient-text">Projects</h3>
-
-  <div class="grid md:grid-cols-2 gap-8">
-
-    <div class="card">
-      <h4 class="text-xl font-semibold mb-2">AgriFusion (Research Project)</h4>
-      <p class="text-gray-400 mb-3">
-        AI-based agriculture system integrating Computer Vision and LLMs.
-      </p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>YOLO-based plant disease detection (high mAP)</li>
-        <li>LLaMA fine-tuned QA model</li>
-        <li>Knowledge Graph integration</li>
-        <li>Evaluated using BERTScore & system accuracy</li>
-      </ul>
-      <p class="text-xs mt-2 text-blue-400">Tech: YOLO, LLaMA, NLP</p>
-    </div>
-
-    <div class="card">
-      <h4 class="text-xl font-semibold mb-2">Smart Job Advisor</h4>
-      <p class="text-gray-400 mb-3">AI resume analyzer and job recommender.</p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>NLP-based parsing</li>
-        <li>Skill recommendation system</li>
-        <li>Streamlit deployment</li>
+<section id="experience" class="py-16 px-6 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4">Work Experience</h3>
+  <div class="space-y-8">
+    <div class="card p-6 rounded-xl">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h4 class="text-lg font-bold text-blue-400">Data Engineer Intern | Onellasoft</h4>
+          <p class="text-xs text-gray-500">Python, SQL, Power BI</p>
+        </div>
+        <span class="text-sm text-gray-400">Feb 2025 – June 2025</span>
+      </div>
+      <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+        <li>Developed high-throughput ETL pipelines, improving efficiency by 20%[cite: 15].</li>
+        <li>Architected centralized reporting, reducing manual effort by 30%[cite: 16].</li>
+        <li>Designed Power BI dashboards using Power Query and DAX[cite: 17].</li>
+        <li>Implemented automated validation for 100% data consistency[cite: 18].</li>
       </ul>
     </div>
 
-    <div class="card">
-      <h4 class="text-xl font-semibold mb-2">Crop Disease Detection</h4>
-      <p class="text-gray-400 mb-3">CNN-based plant disease classifier.</p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>Image preprocessing</li>
-        <li>High accuracy model</li>
+    <div class="card p-6 rounded-xl">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h4 class="text-lg font-bold text-purple-400">ML Engineer Intern | Blocksone</h4>
+          <p class="text-xs text-gray-500">Scikit-learn, Pandas, Statistics</p>
+        </div>
+        <span class="text-sm text-gray-400">Aug 2024 – Jan 2025</span>
+      </div>
+      <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
+        <li>Deployed ML pipelines, improving prediction accuracy by 15%[cite: 22].</li>
+        <li>Reduced computational overhead by 20% via workflow optimization[cite: 23].</li>
+        <li>Structured large-scale datasets for business performance metrics[cite: 24].</li>
       </ul>
     </div>
-
-    <div class="card">
-      <h4 class="text-xl font-semibold mb-2">Sales Dashboard</h4>
-      <p class="text-gray-400 mb-3">Power BI dashboard for business insights.</p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>KPI tracking</li>
-        <li>DAX calculations</li>
-      </ul>
-    </div>
-
   </div>
 </section>
 
-<!-- CONFERENCE -->
-<section class="max-w-5xl mx-auto py-16 px-6">
-  <h3 class="text-2xl font-bold gradient-text mb-6 text-center">Research & Conference</h3>
-
-  <div class="card">
-    <h4 class="text-xl font-semibold mb-2">ICICST 2026 – NIT Jalandhar</h4>
-    <p class="text-gray-400">
-      Presented research on AI-based plant disease detection and intelligent advisory systems.
-    </p>
+<section id="projects" class="py-16 px-6 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-bold mb-8 border-l-4 border-purple-500 pl-4">Technical Projects</h3>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="card p-6 rounded-xl">
+      <h4 class="font-bold mb-2">AgriFusion: Multimodal AI for Crop Diagnosis</h4>
+      <p class="text-sm text-gray-400 mb-4">Engineered a pipeline integrating Computer Vision (VLM), Knowledge Graphs, and LLMs[cite: 26]. Presented at ICICST 2026 – NIT Jalandhar.</p>
+      <div class="flex flex-wrap gap-2"><span class="skill-badge">VLM</span><span class="skill-badge">LLM</span><span class="skill-badge">Knowledge Graphs</span></div>
+    </div>
+    <div class="card p-6 rounded-xl">
+      <h4 class="font-bold mb-2">Smart Job Advisor</h4>
+      <p class="text-sm text-gray-400 mb-4">AI platform that parses resumes using NLP to recommend personalized jobs[cite: 32].</p>
+      <div class="flex flex-wrap gap-2"><span class="skill-badge">NLP</span><span class="skill-badge">Recommendation Engine</span></div>
+    </div>
+    <div class="card p-6 rounded-xl">
+      <h4 class="font-bold mb-2">Retail Sales Monitoring</h4>
+      <p class="text-sm text-gray-400 mb-4">Built an automated ingestion pipeline using Google Sheets API and Power BI[cite: 36].</p>
+      <div class="flex flex-wrap gap-2"><span class="skill-badge">Data Engineering</span><span class="skill-badge">DAX</span></div>
+    </div>
+    <div class="card p-6 rounded-xl">
+      <h4 class="font-bold mb-2">Crypto Price Tracker</h4>
+      <p class="text-sm text-gray-400 mb-4">Integrated CoinGecko API with Power BI to monitor real-time market metrics[cite: 43].</p>
+      <div class="flex flex-wrap gap-2"><span class="skill-badge">API Integration</span><span class="skill-badge">Power BI</span></div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="text-center py-16">
-  <h3 class="text-2xl font-bold gradient-text mb-4">Contact</h3>
-  <p class="text-gray-400">📧 surajkapale28@gmail.com</p>
-  <p class="text-gray-400">📱 +91 9373398569</p>
+<section id="skills" class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+  <div>
+    <h3 class="text-2xl font-bold mb-6 border-l-4 border-green-500 pl-4">Technical Skills</h3>
+    <div class="space-y-4 text-sm">
+      <p><strong class="text-blue-400">Languages:</strong> Python, SQL, C++, LaTeX[cite: 45].</p>
+      <p><strong class="text-blue-400">Data Engineering:</strong> ETL, Data Modeling, API Integration[cite: 46].</p>
+      <p><strong class="text-blue-400">ML & Analytics:</strong> TensorFlow, Keras, Scikit-learn, Pandas, NLP[cite: 47].</p>
+      <p><strong class="text-blue-400">Visualization:</strong> Power BI, Tableau, Power Query, Excel[cite: 48].</p>
+    </div>
+  </div>
+  <div>
+    <h3 class="text-2xl font-bold mb-6 border-l-4 border-orange-500 pl-4">Education</h3>
+    <div class="space-y-4">
+      <div>
+        <p class="font-bold">M.Tech (Data Science) | 7.0 CGPA</p>
+        <p class="text-sm text-gray-500 text-sm">COEP Technological University, Pune (2024-2026) </p>
+      </div>
+      <div>
+        <p class="font-bold">B.Tech (Data Science) | 8.0 CGPA</p>
+        <p class="text-sm text-gray-500 text-sm">GH Raisoni College of Engineering, Pune (2020-2024) </p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<a href="https://wa.me/919373398569" target="_blank" class="whatsapp-btn">
-  💬 WhatsApp
-</a>
+<section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+  <div>
+    <h3 class="text-2xl font-bold mb-6">Certifications</h3>
+    <ul class="text-sm text-gray-400 space-y-2">
+      <li>• Analyzing Data with Power BI | Microsoft [cite: 51]</li>
+      <li>• Data Visualization with Tableau | Coursera [cite: 52]</li>
+      <li>• Joy of Computing using Python | NPTEL [cite: 50]</li>
+      <li>• Responsible & Safe AI | NPTEL [cite: 53]</li>
+      <li>• SQL (Basic) | HackerRank [cite: 54]</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="text-2xl font-bold mb-6">Leadership</h3>
+    <ul class="text-sm text-gray-400 space-y-4">
+      <li>
+        <p class="font-bold text-gray-200">Volunteer | Cavista Hackathon (2026)</p>
+        <p>Technical coordination of data-driven tracks[cite: 64].</p>
+      </li>
+      <li>
+        <p class="font-bold text-gray-200">Volunteer | MindSpark, COEP (2025)</p>
+        <p>Managed logistics for technical festival operations[cite: 63].</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
-<footer class="text-center py-6 text-gray-500 text-sm">
-  © 2026 Suraj Kapale
+<footer class="py-12 text-center text-gray-600 text-xs border-t border-slate-900">
+  <p>© 2026 Suraj Kapale | Pune, India [cite: 7]</p>
 </footer>
 
 </body>
