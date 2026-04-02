@@ -37,21 +37,27 @@
       z-index: -1;
     }
 
-    /* PROJECT CARD */
-    .project-card {
-      position: relative;
-      border-radius: 14px;
+    /* CARD STYLE */
+    .card {
       background: rgba(30, 41, 59, 0.6);
       backdrop-filter: blur(10px);
-      transition: all 0.4s ease;
+      border-radius: 14px;
+      transition: 0.4s;
+      position: relative;
     }
 
-    .project-card::before {
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    /* GLOW BORDER */
+    .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      padding: 1px;
       border-radius: 14px;
+      padding: 1px;
       background: linear-gradient(120deg,#3b82f6,#9333ea,#06b6d4);
       -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
@@ -61,16 +67,10 @@
       transition: 0.4s;
     }
 
-    .project-card:hover::before {
+    .card:hover::before {
       opacity: 1;
     }
 
-    .project-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    }
-
-    /* TEXT GRADIENT */
     .gradient-text {
       background: linear-gradient(to right, #38bdf8, #a78bfa);
       -webkit-background-clip: text;
@@ -86,89 +86,118 @@
   <h1 class="text-xl font-bold gradient-text">Suraj Kapale</h1>
   <nav class="space-x-6 text-sm">
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <!-- HERO -->
-<section class="text-center py-24 px-4">
-  <h2 class="text-5xl font-bold mb-4 gradient-text">
-    Data Scientist & ML Engineer
-  </h2>
-  <p class="text-gray-400 max-w-xl mx-auto">
-    Building intelligent systems using Machine Learning, NLP, and Computer Vision to solve real-world problems.
-  </p>
+<section class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+
+  <!-- PHOTO -->
+  <div class="flex-shrink-0">
+    <img src="profile.jpg" alt="Suraj" 
+         class="w-52 h-52 object-cover rounded-full border-4 border-blue-500 shadow-lg">
+  </div>
+
+  <!-- TEXT -->
+  <div>
+    <h2 class="text-4xl font-bold gradient-text mb-4">
+      Data Scientist & ML Engineer
+    </h2>
+
+    <p class="text-gray-400 mb-4">
+      M.Tech Data Science student at COEP with strong expertise in Machine Learning,
+      NLP, and Computer Vision. I build intelligent systems that solve real-world problems
+      using data-driven approaches.
+    </p>
+
+    <div class="flex gap-4 mt-4">
+      <a href="#" class="bg-blue-500 px-4 py-2 rounded text-white">View Resume</a>
+      <a href="#" class="border border-blue-500 px-4 py-2 rounded">GitHub</a>
+    </div>
+  </div>
+
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="max-w-4xl mx-auto py-16 px-4">
+<section id="about" class="max-w-5xl mx-auto py-16 px-6">
   <h3 class="text-2xl font-bold mb-6 gradient-text">About Me</h3>
-  <p class="text-gray-400 leading-relaxed">
-    I am an M.Tech Data Science student at COEP with strong expertise in Machine Learning,
-    NLP, and Data Analytics. I build end-to-end AI systems including model development,
-    evaluation, and deployment.
-  </p>
-</section>
 
-<!-- SKILLS -->
-<section id="skills" class="max-w-4xl mx-auto py-16 px-4">
-  <h3 class="text-2xl font-bold mb-6 gradient-text">Skills</h3>
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-    <div>Python</div>
-    <div>Machine Learning</div>
-    <div>NLP</div>
-    <div>Computer Vision</div>
-    <div>SQL</div>
-    <div>Power BI</div>
-    <div>Tableau</div>
-    <div>Deep Learning</div>
+  <div class="card p-6">
+    <p class="text-gray-400 leading-relaxed">
+      I specialize in building AI-powered solutions combining Machine Learning,
+      Deep Learning, and Data Analytics. My work includes developing end-to-end
+      systems such as AgriFusion, where I integrated computer vision, language models,
+      and knowledge graphs to provide intelligent agricultural advisory.
+      <br><br>
+      I have hands-on experience in Python, SQL, Power BI, NLP, and model evaluation techniques.
+    </p>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="max-w-5xl mx-auto py-16 px-4">
+<section id="projects" class="max-w-6xl mx-auto py-16 px-6">
   <h3 class="text-3xl font-bold text-center mb-10 gradient-text">Projects</h3>
 
   <div class="grid md:grid-cols-2 gap-8">
 
     <!-- AGRIFUSION -->
-    <div class="project-card p-6">
-      <h4 class="text-xl font-semibold mb-2">AgriFusion</h4>
+    <div class="card p-6">
+      <h4 class="text-xl font-semibold mb-2">AgriFusion (Flagship Project)</h4>
+
       <p class="text-gray-400 mb-3">
-        End-to-end AI agriculture system integrating YOLO, LLM, and Knowledge Graph.
+        Developed a complete AI pipeline integrating Computer Vision and LLMs
+        to assist farmers with disease detection and advisory.
       </p>
+
       <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
-        <li>YOLO for disease detection</li>
-        <li>LLaMA fine-tuned QA system</li>
-        <li>Knowledge Graph integration</li>
-        <li>BERTScore + mAP evaluation</li>
+        <li>YOLO-based plant disease detection system</li>
+        <li>Fine-tuned LLaMA model for agriculture Q&A</li>
+        <li>Knowledge Graph for contextual insights</li>
+        <li>Evaluation using mAP, BERTScore</li>
+        <li>End-to-end pipeline with real-time inference</li>
       </ul>
+
       <p class="text-xs mt-3 text-blue-400">
-        Tech: YOLO, LLaMA, NLP, HuggingFace
+        Tech: YOLO, LLaMA, NLP, HuggingFace, Python
       </p>
     </div>
 
     <!-- OTHER PROJECTS -->
-    <div class="project-card p-6">
+    <div class="card p-6">
       <h4 class="text-xl font-semibold">Smart Job Advisor</h4>
-      <p class="text-gray-400">NLP-based resume analyzer.</p>
+      <p class="text-gray-400">
+        NLP-based system that analyzes resumes and recommends jobs and skills.
+      </p>
     </div>
 
-    <div class="project-card p-6">
+    <div class="card p-6">
       <h4 class="text-xl font-semibold">Crop Disease Detection</h4>
-      <p class="text-gray-400">CNN-based classifier.</p>
+      <p class="text-gray-400">
+        CNN-based model for plant disease classification using image data.
+      </p>
     </div>
 
-    <div class="project-card p-6">
+    <div class="card p-6">
       <h4 class="text-xl font-semibold">Sales Dashboard</h4>
-      <p class="text-gray-400">Power BI analytics dashboard.</p>
+      <p class="text-gray-400">
+        Power BI dashboard for tracking KPIs and business insights.
+      </p>
     </div>
 
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- CONTACT -->
+<section id="contact" class="max-w-4xl mx-auto py-16 px-6 text-center">
+  <h3 class="text-2xl font-bold mb-6 gradient-text">Contact</h3>
+
+  <p class="text-gray-400">📧 surajkapale28@gmail.com</p>
+  <p class="text-gray-400">📱 +91 9373398569</p>
+
+</section>
+
 <footer class="text-center py-6 text-gray-500 text-sm">
   © 2026 Suraj Kapale
 </footer>
