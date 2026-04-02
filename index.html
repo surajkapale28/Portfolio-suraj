@@ -14,6 +14,7 @@
       color: #e2e8f0;
     }
 
+    /* GRID BACKGROUND */
     body::before {
       content: "";
       position: fixed;
@@ -35,6 +36,38 @@
       z-index: -1;
     }
 
+    /* PROFILE IMAGE STYLE */
+    .profile-container {
+      position: relative;
+      width: 220px;
+      height: 220px;
+    }
+
+    .profile-container::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: linear-gradient(120deg, #3b82f6, #9333ea, #06b6d4);
+      filter: blur(10px);
+      opacity: 0.7;
+    }
+
+    .profile-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0f172a;
+      transition: 0.4s;
+    }
+
+    .profile-container:hover .profile-img {
+      transform: scale(1.05);
+    }
+
+    /* CARD */
     .card {
       background: rgba(30, 41, 59, 0.6);
       backdrop-filter: blur(10px);
@@ -82,7 +115,6 @@
       color: white;
       padding: 12px 16px;
       border-radius: 50px;
-      font-size: 14px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
   </style>
@@ -92,28 +124,28 @@
 
 <header class="flex justify-between items-center px-8 py-4 border-b border-gray-700">
   <h1 class="text-xl font-bold gradient-text">Suraj Kapale</h1>
-  <nav class="space-x-6 text-sm">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
 </header>
 
-<section class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+<!-- HERO -->
+<section class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
 
-  <img src="profile.jpg" class="w-52 h-52 rounded-full border-4 border-blue-500">
+  <!-- IMAGE -->
+  <div class="profile-container">
+    <img src="profile.jpg" class="profile-img">
+  </div>
 
-  <div>
+  <!-- TEXT -->
+  <div class="max-w-xl text-center md:text-left">
     <h2 class="text-4xl font-bold gradient-text mb-4">
       Data Scientist & ML Engineer
     </h2>
 
     <p class="text-gray-400 mb-4">
       M.Tech Data Science student at COEP specializing in Machine Learning,
-      NLP, and Computer Vision. I develop intelligent AI systems for real-world impact.
+      NLP, and Computer Vision. I build intelligent AI systems for real-world impact.
     </p>
 
-    <div class="flex gap-4">
+    <div class="flex gap-4 justify-center md:justify-start">
       <a href="resume.pdf" target="_blank"
          class="bg-blue-500 px-4 py-2 rounded text-white">View Resume</a>
 
@@ -124,122 +156,28 @@
 
 </section>
 
-<!-- MISSION -->
-<section class="max-w-5xl mx-auto py-12 px-6 text-center">
-  <h3 class="text-2xl font-bold gradient-text mb-4">My Mission</h3>
-  <p class="text-gray-400 max-w-3xl mx-auto">
-    To build scalable AI systems that bridge research and real-world applications,
-    especially in agriculture, healthcare, and finance using ML, NLP, and CV.
-  </p>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="max-w-5xl mx-auto py-16 px-6">
-  <h3 class="text-2xl font-bold mb-6 gradient-text">About Me</h3>
-
-  <div class="card">
-    <p class="text-gray-400">
-      I have hands-on experience in building end-to-end machine learning pipelines,
-      working with structured and unstructured data, and developing models for real-world use cases.
-      My key work includes AgriFusion, an intelligent agriculture system integrating YOLO, LLMs,
-      and Knowledge Graphs for smart advisory.
-    </p>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="max-w-6xl mx-auto py-16 px-6">
+<!-- PROJECTS (SHORT VERSION) -->
+<section class="max-w-6xl mx-auto py-16 px-6">
   <h3 class="text-3xl font-bold text-center mb-10 gradient-text">Projects</h3>
 
   <div class="grid md:grid-cols-2 gap-8">
 
     <div class="card">
-      <h4 class="text-xl font-semibold mb-2">AgriFusion (Research Project)</h4>
-      <p class="text-gray-400 mb-3">
-        Developed a full AI pipeline combining Computer Vision and LLMs to assist farmers.
-      </p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>YOLO-based plant disease detection (high mAP)</li>
-        <li>LLaMA fine-tuned for agriculture QA</li>
-        <li>Knowledge Graph for contextual insights</li>
-        <li>Evaluation using BERTScore & system accuracy</li>
-        <li>End-to-end system integration</li>
-      </ul>
-      <p class="text-xs mt-3 text-blue-400">Tech: YOLO, LLaMA, NLP, HuggingFace</p>
+      <h4 class="text-xl font-semibold mb-2">AgriFusion</h4>
+      <p class="text-gray-400">AI agriculture system using YOLO + LLM</p>
     </div>
 
     <div class="card">
-      <h4 class="text-xl font-semibold mb-2">Smart Job Advisor</h4>
-      <p class="text-gray-400 mb-3">
-        AI system to analyze resumes and recommend jobs and skills.
-      </p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>NLP-based resume parsing</li>
-        <li>Similarity-based job recommendations</li>
-        <li>Skill gap analysis</li>
-        <li>Streamlit deployment</li>
-      </ul>
-      <p class="text-xs mt-3 text-blue-400">Tech: NLP, Python, Streamlit</p>
-    </div>
-
-    <div class="card">
-      <h4 class="text-xl font-semibold mb-2">Crop Disease Detection</h4>
-      <p class="text-gray-400 mb-3">
-        Deep learning model to detect plant diseases from images.
-      </p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>CNN-based classification model</li>
-        <li>Data preprocessing & augmentation</li>
-        <li>High accuracy achieved</li>
-        <li>Supports farmers in early diagnosis</li>
-      </ul>
-      <p class="text-xs mt-3 text-blue-400">Tech: CNN, TensorFlow</p>
-    </div>
-
-    <div class="card">
-      <h4 class="text-xl font-semibold mb-2">Sales Performance Dashboard</h4>
-      <p class="text-gray-400 mb-3">
-        Business intelligence dashboard for analytics.
-      </p>
-      <ul class="text-sm text-gray-400 list-disc list-inside">
-        <li>Power BI dashboards with KPI tracking</li>
-        <li>Real-time data integration</li>
-        <li>DAX-based calculations</li>
-        <li>Insight generation for decision making</li>
-      </ul>
-      <p class="text-xs mt-3 text-blue-400">Tech: Power BI, DAX, SQL</p>
+      <h4 class="text-xl font-semibold">Smart Job Advisor</h4>
+      <p class="text-gray-400">NLP-based recommendation system</p>
     </div>
 
   </div>
-</section>
-
-<!-- CONFERENCE -->
-<section class="max-w-5xl mx-auto py-16 px-6">
-  <h3 class="text-2xl font-bold gradient-text mb-6 text-center">Research & Conference</h3>
-
-  <div class="card">
-    <h4 class="text-xl font-semibold mb-2">ICICST 2026 – NIT Jalandhar</h4>
-    <p class="text-gray-400">
-      Presented research on AI-based plant disease detection and intelligent advisory systems,
-      focusing on real-world deployment and impact.
-    </p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="text-center py-16">
-  <h3 class="text-2xl font-bold gradient-text mb-4">Contact</h3>
-  <p class="text-gray-400">📧 surajkapale28@gmail.com</p>
-  <p class="text-gray-400">📱 +91 9373398569</p>
 </section>
 
 <a href="https://wa.me/919373398569" target="_blank" class="whatsapp-btn">
-  💬 Chat on WhatsApp
+  💬 WhatsApp
 </a>
-
-<footer class="text-center py-6 text-gray-500 text-sm">
-  © 2026 Suraj Kapale
-</footer>
 
 </body>
 </html>
