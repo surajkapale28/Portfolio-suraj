@@ -26,7 +26,7 @@
       z-index: -2;
     }
 
-    /* GLOW ORBS */
+    /* GLOW LIGHT */
     body::after {
       content: "";
       position: fixed;
@@ -37,7 +37,7 @@
       z-index: -1;
     }
 
-    /* CARD STYLE */
+    /* CARD */
     .card {
       background: rgba(30, 41, 59, 0.6);
       backdrop-filter: blur(10px);
@@ -76,6 +76,24 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* WHATSAPP BUTTON */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 
@@ -95,10 +113,7 @@
 <section class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
   <!-- PHOTO -->
-  <div class="flex-shrink-0">
-    <img src="profile.jpg" alt="Suraj" 
-         class="w-52 h-52 object-cover rounded-full border-4 border-blue-500 shadow-lg">
-  </div>
+  <img src="profile.jpg" class="w-52 h-52 rounded-full border-4 border-blue-500">
 
   <!-- TEXT -->
   <div>
@@ -107,14 +122,16 @@
     </h2>
 
     <p class="text-gray-400 mb-4">
-      M.Tech Data Science student at COEP with strong expertise in Machine Learning,
-      NLP, and Computer Vision. I build intelligent systems that solve real-world problems
-      using data-driven approaches.
+      M.Tech Data Science student at COEP. I build AI systems using Machine Learning,
+      NLP, and Computer Vision to solve real-world problems.
     </p>
 
-    <div class="flex gap-4 mt-4">
-      <a href="#" class="bg-blue-500 px-4 py-2 rounded text-white">View Resume</a>
-      <a href="#" class="border border-blue-500 px-4 py-2 rounded">GitHub</a>
+    <div class="flex gap-4">
+      <a href="resume.pdf" target="_blank"
+         class="bg-blue-500 px-4 py-2 rounded text-white">View Resume</a>
+
+      <a href="https://github.com/surajkapale28" target="_blank"
+         class="border border-blue-500 px-4 py-2 rounded">GitHub</a>
     </div>
   </div>
 
@@ -125,13 +142,10 @@
   <h3 class="text-2xl font-bold mb-6 gradient-text">About Me</h3>
 
   <div class="card p-6">
-    <p class="text-gray-400 leading-relaxed">
-      I specialize in building AI-powered solutions combining Machine Learning,
-      Deep Learning, and Data Analytics. My work includes developing end-to-end
-      systems such as AgriFusion, where I integrated computer vision, language models,
-      and knowledge graphs to provide intelligent agricultural advisory.
-      <br><br>
-      I have hands-on experience in Python, SQL, Power BI, NLP, and model evaluation techniques.
+    <p class="text-gray-400">
+      I specialize in Machine Learning, NLP, and Computer Vision. I have built
+      end-to-end AI systems including AgriFusion, integrating YOLO, LLMs,
+      and Knowledge Graphs for smart agriculture solutions.
     </p>
   </div>
 </section>
@@ -142,61 +156,45 @@
 
   <div class="grid md:grid-cols-2 gap-8">
 
-    <!-- AGRIFUSION -->
     <div class="card p-6">
-      <h4 class="text-xl font-semibold mb-2">AgriFusion (Flagship Project)</h4>
-
-      <p class="text-gray-400 mb-3">
-        Developed a complete AI pipeline integrating Computer Vision and LLMs
-        to assist farmers with disease detection and advisory.
-      </p>
-
-      <ul class="text-sm text-gray-400 list-disc list-inside space-y-1">
-        <li>YOLO-based plant disease detection system</li>
-        <li>Fine-tuned LLaMA model for agriculture Q&A</li>
-        <li>Knowledge Graph for contextual insights</li>
-        <li>Evaluation using mAP, BERTScore</li>
-        <li>End-to-end pipeline with real-time inference</li>
+      <h4 class="text-xl font-semibold mb-2">AgriFusion (Flagship)</h4>
+      <ul class="text-sm text-gray-400 list-disc list-inside">
+        <li>YOLO-based plant disease detection</li>
+        <li>LLaMA fine-tuned model</li>
+        <li>Knowledge Graph integration</li>
+        <li>Evaluation using mAP & BERTScore</li>
       </ul>
-
-      <p class="text-xs mt-3 text-blue-400">
-        Tech: YOLO, LLaMA, NLP, HuggingFace, Python
-      </p>
     </div>
 
-    <!-- OTHER PROJECTS -->
     <div class="card p-6">
       <h4 class="text-xl font-semibold">Smart Job Advisor</h4>
-      <p class="text-gray-400">
-        NLP-based system that analyzes resumes and recommends jobs and skills.
-      </p>
+      <p class="text-gray-400">Resume analyzer using NLP</p>
     </div>
 
     <div class="card p-6">
       <h4 class="text-xl font-semibold">Crop Disease Detection</h4>
-      <p class="text-gray-400">
-        CNN-based model for plant disease classification using image data.
-      </p>
+      <p class="text-gray-400">CNN-based classifier</p>
     </div>
 
     <div class="card p-6">
       <h4 class="text-xl font-semibold">Sales Dashboard</h4>
-      <p class="text-gray-400">
-        Power BI dashboard for tracking KPIs and business insights.
-      </p>
+      <p class="text-gray-400">Power BI dashboard</p>
     </div>
 
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="max-w-4xl mx-auto py-16 px-6 text-center">
-  <h3 class="text-2xl font-bold mb-6 gradient-text">Contact</h3>
-
+<section id="contact" class="text-center py-16">
+  <h3 class="text-2xl font-bold gradient-text mb-4">Contact</h3>
   <p class="text-gray-400">📧 surajkapale28@gmail.com</p>
   <p class="text-gray-400">📱 +91 9373398569</p>
-
 </section>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/919373398569" target="_blank" class="whatsapp-btn">
+  💬 Chat on WhatsApp
+</a>
 
 <footer class="text-center py-6 text-gray-500 text-sm">
   © 2026 Suraj Kapale
