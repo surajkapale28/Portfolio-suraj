@@ -15,6 +15,16 @@
     .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .skill-badge { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 2px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 500; }
     .section-title { border-left: 4px solid #3b82f6; padding-left: 1rem; margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700; }
+    
+    .download-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
   </style>
 </head>
 <body>
@@ -46,9 +56,16 @@
     <p class="text-gray-400 leading-relaxed mb-6">
       M.Tech Data Science candidate at COEP with expertise in building scalable ETL pipelines, automated data validation, and AI-integrated systems using Python, SQL, and Power BI.
     </p>
-    <div class="flex gap-4 justify-center md:justify-start">
-      <a href="mailto:surajkapale28@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg text-sm font-semibold transition">Email Me</a>
-      <a href="https://github.com/surajkapale28" target="_blank" class="border border-slate-700 hover:bg-slate-800 px-6 py-2 rounded-lg text-sm font-semibold transition">GitHub</a>
+    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+      <a href="resume.pdf" download="resume.pdf" class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-sm font-bold flex items-center gap-2 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download Resume
+      </a>
+      <a href="https://github.com/surajkapale28" target="_blank" class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-lg text-sm font-semibold transition">
+        GitHub
+      </a>
     </div>
   </div>
 </section>
@@ -99,7 +116,7 @@
     <div class="card p-6 rounded-xl">
       <h4 class="font-bold text-white mb-2">AgriFusion: Multimodal AI for Crop Diagnosis</h4>
       <p class="text-sm text-gray-400 mb-4">Master's Thesis: Integrated Computer Vision (VLM/YOLO), Knowledge Graphs, and LLMs for disease detection. Presented at ICICST 2026 – NIT Jalandhar.</p>
-      <div class="flex flex-wrap gap-2"><span class="skill-badge">VLM</span><span class="skill-badge">LLaMA</span><span class="skill-badge">Knowledge Graphs</span></div>
+      <div class="flex flex-wrap gap-2"><span class="skill-badge">VLM</span><span class="skill-badge">LLM</span><span class="skill-badge">Knowledge Graphs</span></div>
     </div>
     <div class="card p-6 rounded-xl">
       <h4 class="font-bold text-white mb-2">Smart Job Advisor</h4>
@@ -143,10 +160,10 @@
   </div>
   <div id="education">
     <h3 class="section-title" style="border-color: #f59e0b;">Education</h3>
-    <div class="space-y-6">
+    <div class="space-y-6 text-sm">
       <div class="card p-5 rounded-lg border-l-4 border-orange-500">
         <h4 class="font-bold">M.Tech in Data Science</h4>
-        <p class="text-sm text-gray-300">COEP Technological University, Pune</p>
+        <p class="text-gray-300">COEP Technological University, Pune</p>
         <div class="flex justify-between mt-2 text-xs text-gray-500">
           <span>2024 – 2026</span>
           <span class="font-bold text-orange-400">CGPA: 7.0/10</span>
@@ -154,7 +171,7 @@
       </div>
       <div class="card p-5 rounded-lg border-l-4 border-slate-500">
         <h4 class="font-bold">B.Tech in Data Science</h4>
-        <p class="text-sm text-gray-300">GH Raisoni College of Engineering, Pune</p>
+        <p class="text-gray-300">GH Raisoni College of Engineering, Pune</p>
         <div class="flex justify-between mt-2 text-xs text-gray-500">
           <span>2020 – 2024</span>
           <span class="font-bold text-slate-400">CGPA: 8.0/10</span>
